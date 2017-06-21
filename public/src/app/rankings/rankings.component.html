@@ -1,0 +1,7 @@
+<div *ngFor="let player of users" class="player">
+  <img [src]="player.profile">
+  <div class="score">
+    <h3>{{player.username}}</h3>
+    <h3>Score: {{player.score}}</h3>
+  </div>
+</div>

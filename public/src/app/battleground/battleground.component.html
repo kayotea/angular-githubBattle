@@ -1,0 +1,55 @@
+<div id="wrapper">
+  <div id="player_box">
+    <div class="player">
+      <!--before valid username is retreived-->
+      <div *ngIf="!player1.battle_ready">
+        <h3>Player 1</h3>
+        <form (submit)="usernameValid(user1)" #user1form="ngForm">
+          Github Username: 
+          <input type="text" name="username" 
+          required
+          [(ngModel)]="user1.username">
+          <br>
+          <input type="submit" value="Get User" [disabled]="!user1form.form.valid">
+        </form>
+        <p *ngIf="!player1.username" class="error">Invalid Github username</p>
+        {{user1 | json}}
+        {{user1.score}}
+      </div>
+      <!--once player is retreived-->
+      <div *ngIf="player1.battle_ready">
+        <img [src]="user1.profile" alt="player1 pic">
+        <p>{{user1.username}}</p>
+      </div>
+
+    </div>
+    <div class="player">
+        <!--before valid username is retreived-->
+      <div *ngIf="!player2.battle_ready">
+        <h3>Player 2</h3>
+        <form (submit)="usernameValid(user2)" #user2form="ngForm">
+          Github Username: 
+          <input type="text" name="username" 
+          required
+          [(ngModel)]="user2.username">
+          <br>
+          <input type="submit" value="Get User" [disabled]="!user2form.form.valid">
+        </form>
+        <p *ngIf="!player2.username" class="error">Invalid Github username</p>
+        {{user2 | json}}
+        {{user2.score}}
+      </div>
+      <!--once player is retreived-->
+      <div *ngIf="player2.battle_ready">
+          <img [src]="user2.profile" alt="player2 pic">
+          <p>{{user2.username}}</p>
+      </div>
+    </div>
+  </div>
+  <button 
+    *ngIf="player1.battle_ready && player2.battle_ready" 
+    class="battle" 
+    [routerLink]="['/results']"
+    >BATTLE!</button>
+    {{players | json}}
+</div>

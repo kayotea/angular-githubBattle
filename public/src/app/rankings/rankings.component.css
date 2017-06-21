@@ -1,0 +1,10 @@
+.player {
+    display: block;
+    height: 200px;
+}
+img {
+    height: 100%;
+}
+.score {
+    display: inline-block;
+}

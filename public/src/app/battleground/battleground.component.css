@@ -1,0 +1,19 @@
+.player{
+    width: 48%;
+    background-color: lightblue;
+    display: inline-block;
+    vertical-align: top;
+}
+.error{
+    color: red;
+}
+.battle{
+    background-color: orange;
+    margin: auto;
+}
+img {
+    width: 100%;
+}
+.center{
+    text-align: center;
+}

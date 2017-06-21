@@ -1,0 +1,19 @@
+<p>
+  results works!
+</p>
+{{players | json}}
+<div class="box">
+  <h3 class="winner">1st Place</h3>
+  <p *ngIf="players[0].score > players[1].score" class="winner">{{players[0].username}}</p>
+  <p *ngIf="players[1].score > players[0].score" class="winner">{{players[1].username}}</p>
+  <h3>2nd Place</h3>
+  <p *ngIf="players[0].score < players[1].score" class="loser">{{players[0].username}}</p>
+  <p *ngIf="players[1].score < players[0].score" class="loser">{{players[1].username}}</p>
+</div>
+<div class="box">
+  <img *ngIf="players[0].score > players[1].score" [src]="players[0].profile" alt="winner profile">
+  <img *ngIf="players[1].score > players[0].score" [src]="players[1].profile" alt="winner profile">
+  <p *ngIf="players[0].score > players[1].score">{{players[0].username}}</p>
+  <p *ngIf="players[1].score > players[0].score">{{players[1].username}}</p>
+</div>
+<button [routerLink]="['/']">Reset</button>

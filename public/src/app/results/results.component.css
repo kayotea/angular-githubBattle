@@ -1,0 +1,15 @@
+.box{
+    width: 48%;
+    background-color: lightblue;
+    display: inline-block;
+    vertical-align: top;
+}
+img {
+    width: 100%;
+}
+.winner {
+    color: green;
+}
+.loser {
+    color: red;
+}
